@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong>DEscription:</strong>
+  <%= @book.description %>
+</p>
+
+<p>
+<strong>Image:</strong>
+<% if @book.image.url != nil %>
+  <%= image_tag @book.image.url %>
+<%else%>
+<%= image_tag 'http://insignia.sd23.bc.ca/Library/images/cover/book.png' %>
+<%end%>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @book.category %>
+</p>
+
+
+<%= link_to 'Back', books_path %>
+
+<% if @can_edit %>
+<%= link_to "Edit", edit_book_path(@book) %>
+<% end %>
