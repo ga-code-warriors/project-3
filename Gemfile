@@ -11,7 +11,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 
 gem 'devise', '~> 4.6', '>= 4.6.1'
-
+gem 'bootstrap'
 # gem 'pry-rails', :group  => :development
 
 # Use SCSS for stylesheets
