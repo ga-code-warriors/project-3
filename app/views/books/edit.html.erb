@@ -1,6 +1,15 @@
+<% if @can_edit %> 
+
 <h1>Editing Book</h1>
 
 <%= render 'form', book: @book %>
 
 <%= link_to 'Show', @book %> |
+
 <%= link_to 'Back', books_path %>
+
+<% else %> 
+
+<h1> Not allowed </h1> 
+
+<% end %>

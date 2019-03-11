@@ -10,18 +10,15 @@
     </tr>
   </thead>
 
-  <tbody>
+<tbody>
     <% @books.each do |book| %>
       <tr>
-        <td><%= book.title %></td> 
-        <td><%= link_to 'Show', book %></td>
-
+        <td><%= link_to book.title, book %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+<% if @has_books %>
+<%= link_to 'My books', books_path %>
+<%end%>
 <br>
-
-
-      
