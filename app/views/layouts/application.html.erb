@@ -10,6 +10,7 @@
   </head>
 
   <body>
+  <header class="container-fluid main-header">
   <p class="notice"><%= notice %></p>
        <p class="alert"><%= alert %></p>
         <% if user_signed_in? %>
@@ -18,8 +19,10 @@
      <% else %>
     <%= link_to "login", new_user_session_path %>
    <% end %>
+   </header>
 
-
-    <%= yield %>
+   <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
