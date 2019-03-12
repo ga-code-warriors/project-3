@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @book.description %>
+</p>
+
+
+
+<p>
+<strong>Image:</strong>
+<% if @book.image.url != nil %>
+  <%= image_tag @book.image.url %>
+<%else%>
+  <%= image_tag 'https://png.pngtree.com/element_pic/17/07/27/bd157c7c747dc708790aa64b43c3da35.jpg' %>
+<%end%>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @book.category %>
+</p>
+
+<h2>Comments</h2>
+<%= render @book.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<%= link_to 'Back', books_path %>
+
+<% if @can_edit %> 
+
+<%= link_to 'Edit', edit_book_path(@book) %>
+
+<% end %> 
