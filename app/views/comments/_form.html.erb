@@ -1,15 +1,18 @@
 <%= form_with(model: [ @book, @book.comments.build ], local: true) do |form| %>
-    <p>
-      <%= form.label :commenter %><br>
-      <%= form.text_field :commenter %>
+  
+
+  <p>
+      <%= form.label :commenter, style: 'margin-left:50px; margin-top:30px;' %> <br>
+        <%= form.text_field :commenter, style:'width:235px; height:30px; margin-left:50px;' %> 
     </p>
     
     <p>
-      <%= form.label :comment %><br>
-      <%= form.text_area :comment %>
+      <%= form.label :comment , style: 'margin-left:50px;'%><br>
+      <%= form.text_area :comment ,style:'width:735px; height:100px; margin-left:50px;'%>
     </p>
     
-    <p>
-      <%= form.submit %>
+   <p>
+      <%= form.submit%>
     </p>
+
   <% end %>

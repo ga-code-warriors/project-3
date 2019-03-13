@@ -1,43 +1,76 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container ">  
+ 
+<div id="loginbox" style="margin:10% auto;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center">    
+<div style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); padding:30px; width:100%;">  
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+                    <h2>Edit <%= resource_name.to_s.humanize %></h2>
+                    </br>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+                    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+                      <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+                      <div class="form-group input-group">
+                <div class="input-group-prepend">
+                                 <span class="input-group-text">
+                                     <i class="fa fa-user " > <img src="https://img.icons8.com/ios/18/000000/new-post-filled.png"> </i>
+                                 </span>
+                                 </div>
+                        <%= f.email_field :email, autofocus: true, autocomplete: "email" , class: 'form-control' , placeholder:'email' %>
+                      </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+                      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                      <% end %>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
+                      <div class="field">
+                        <%= f.label :password %> <i>(leave blank if you do not want to change it)</i><br />
+                        <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                                         <span class="input-group-text">
+                                             <i class="fa fa-user " > <img src="https://img.icons8.com/material/18/000000/lock.png"> </i>
+                                         </span>
+                                         </div>
+                        <%= f.password_field :password, autocomplete: "new-password" , class: 'form-control' , placeholder:'new-password' %>
+                        </div>
+                        <% if @minimum_password_length %>
+                         
+                          <em><%= @minimum_password_length %> characters minimum</em>
+                        <% end %>
+                      </div>
+                      <div class="field">
+                        <%= f.label :password_confirmation %><br />
+                        <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                                         <span class="input-group-text">
+                                             <i class="fa fa-user " > <img src="https://img.icons8.com/material/18/000000/lock.png"> </i>
+                                         </span>
+                                         </div>
+                        <%= f.password_field :password_confirmation, autocomplete: "new-password" , class: 'form-control' , placeholder:'new-password confirmation' %>
+                      </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
+                      <div class="field">
+                        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+                        <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                                         <span class="input-group-text">
+                                             <i class="fa fa-user " > <img src="https://img.icons8.com/material/18/000000/lock.png"> </i>
+                                         </span>
+                                         </div>
+                        <%= f.password_field :current_password, autocomplete: "current-password" , class: 'form-control' , placeholder:'current-password' %>
+                        </br>
+                      </div>
 
-<h3>Cancel my account</h3>
+                      <div class="actions">
+                        <%= f.submit "Update" , class: 'btn btn-primary col-md-12'%>
+                      </div>
+                    <% end %>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+                    <h3>Cancel my account</h3>
 
-<%= link_to "Back", :back %>
+                    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete , class: 'btn btn-primary col-md-12' %></p>
+
+                    <%= link_to "Back", :home %>
+
+</div>
+</div></div>
