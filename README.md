@@ -1,24 +1,67 @@
-# README
+# Bookshelf
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Bookshelf is a website where users can post their books.
 
-Things you may want to cover:
+![alt text](url) 
 
-* Ruby version
+## Tools
+- Command Line
+- Ruby
+- Rails
+- Bootstrap
+- HTML
+- CSS
 
-* System dependencies
+### User story
+  - Version 1:
+    - The user must sign up to add a new book
+    - The user can change own password
+    - The user can sign out
+    - After sign in users can create, view, edit and destroy their posts.
+    
+  - Version 2:
+    - User can upload image
+    - User can add commint 
 
-* Configuration
+### Entity Relationship Diagram (ERD)
 
-* Database creation
+<table>
+  <th colspan="2" style="text-align:center">Books</th>
+  <tr>
+    <td>id</td>
+    <td>primary key</td>
+  </tr>
+  <tr>
+    <td>title</td>
+    <td>string</td>
+  </tr>
+  <tr>
+    <td>author</td>
+    <td>string</td>
+  </tr>
+  <tr>
+    <td>description</td>
+    <td>string</td>
+  </tr>
+  <tr>
+    <td>category</td>
+    <td>string</td>
+  </tr>
+  <tr>
+    <td>image</td>
+    <td>binary</td>
+  </tr>
+</table>
 
-* Database initialization
+## Additional Resources
 
-* How to run the test suite
+- [Rails: Docs](https://guides.rubyonrails.org/getting_started.html)
+- [Bootstrap](https://v4-alpha.getbootstrap.com/components/forms/)
+- [Devise Docs](https://github.com/plataformatec/devise)
+- [Carrierwave](https://github.com/carrierwaveuploader/carrierwave)
+-  [Stack Overflow](https://stackoverflow.com/)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Acknowledgements to ..
+- Mike
+- Usman
+- Ghadeer

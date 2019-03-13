@@ -2,39 +2,39 @@
 <div class="container-fluid">
   <div class="row pr-5 pl-5 mr-2 ml-2 ">
     <div class="col">
-      <div class="card mt-5 ml-5" style="width: 40rem;  height: 530px; border:3px solid black;">
+      <div class="card mt-5 ml-5" style="width: 40rem;  height: 560px; border:3px solid black; color:black;">
         <div class="card-body">
 
-      <p class="text-center">
-        <strong>
-        <%= @book.title %></strong>
-      </p>
+            <p class="text1 ml-5">
+            <%= link_to 'Back', books_path ,style:'margin-right:20px; font-size:14px; color:black; text-decoration: underline;'%>
+            <% if @can_edit %> 
+            <%= link_to 'Edit', edit_book_path(@book) ,style:'font-size:14px; color:black; text-decoration: underline;'%>
+            <% end %> 
+            </p>
 
-      <p class="text-center">
-        <strong><%= @book.author %></strong>
-      </p>
+          <p class="text-center">
+            <strong>
+            <%= @book.title %></strong>
+          </p>
+        
+          <p class="text-center">
+            <strong><%= @book.author %></strong>
+          </p>
 
-      <p class="text-center">
-          <% if @book.image.url != nil %>
-            <%= image_tag @book.image.url, style: "width: 12rem;  height: 250px;"%>
-          <%else%>
-          <%= image_tag 'http://insignia.sd23.bc.ca/Library/images/cover/book.png' %>
-          <%end%>
-      </p>
+          <p class="text-center">
+              <% if @book.image.url != nil %>
+                <%= image_tag @book.image.url, style: "width: 12rem;  height: 250px;"%>
+              <%else%>
+              <%= image_tag 'http://insignia.sd23.bc.ca/Library/images/cover/book.png' %>
+              <%end%>
+          </p>
 
-      <p class="text-center">
-        <strong><%= @book.description %></strong>
-      </p>
+          <p class="text-center">
+            <strong><%= @book.description %></strong>
+          </p>
+          
       </div>
-    </div>
-
-    <%= link_to 'Back', books_path ,style:'margin-right:20px;'%>
-    <% if @can_edit %> 
-    <%= link_to 'Edit', edit_book_path(@book) %>
-    <% end %> 
-
+      </div>
     <%= render @book.comments %>
     <%= render 'comments/form' %>
- 
-
  </div>
