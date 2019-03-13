@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :comments
   end
   get 'books/:id' => 'books#show', as:'books_id'
+  get 'books/new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

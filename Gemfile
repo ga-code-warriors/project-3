@@ -13,6 +13,9 @@ gem 'devise', '~> 4.6', '>= 4.6.1'
 
 gem 'carrierwave', '~> 0.10.0'
 gem 'mini_magick', '~> 4.3'
+
+gem 'bootstrap'
+gem 'jquery-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

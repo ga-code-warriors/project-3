@@ -1,38 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Books</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @books.each do |book| %>
-      <tr>
-        <td><%= book.title %></td>
-        <td><%= book.author %></td>
-        <td><%= book.description %></td>
-        <td><%= book.image %></td>
-        <td><%= book.category %></td>
-        <td><%= link_to 'Show', book %></td>
-        <% if user_signed_in? %>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <% end %>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<body>
+<br><br><br>
+<div class="table-responsive">
+<div class="container" >
+  <table class="table table-bordered" style="width:100%">
+  
+  <h2 colspan=3 class="My_book text-center">My Books📖</h2>
 <br>
-
-<%= link_to 'New Book', new_book_path %> |
-<%= link_to 'Home', home_path %>
+    <thead>
+      <tr class="header_table">
+        <th class="header text-center">Title</th>
+        <th class="header text-center">Author</th>
+        <th class="des text-center">Description </th>
+        <th class="text-center"> Image</th>
+        <th class="text-center">Category</th>
+        <th class="operation_icon text-center"> 👓 </th>
+        <th class="operation_icon text-center">🖊</th>
+        <th class="operation_icon text-center">🗑</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @books.each do |book| %>
+        <tr class="cell_table">
+          <td class="text-center"><%= book.title %></td>
+          <td class="text-center"> <%= book.author %></td>
+          <td class="text-center"><%= book.description %></td>
+          <td class="text-center">
+          <img style="width:100%;" class="img-responsive" />
+          <% if book.image.url != nil %>
+               <%= image_tag book.image.url , class:"img-responsive", style: "width: 14rem;  height: 200px;"%>
+           <%else%>
+               <%= image_tag 'https://png.pngtree.com/element_pic/17/07/27/bd157c7c747dc708790aa64b43c3da35.jpg', class:"img-responsive", style: "width: 14rem;  height: 200px;" %>
+          <%end%>
+          </td>
+          <td class="text-center"><%= book.category %></td>
+          <td class="operation text-center"><%= link_to 'Show', book %></td>
+          <td class="operation text-center"><%= link_to 'Edit', edit_book_path(book) %></td>
+          <td class="operation text-center"><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+ </div>
+</body>
