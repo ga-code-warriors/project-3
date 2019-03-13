@@ -1,24 +1,26 @@
 
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @book.author %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @book.description %>
-</p>
 
 
-<p>
-<strong>Image:</strong>
+  <title>Small Business - Start Bootstrap Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/small-business.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+      <div class="col-lg-7">
+       <p>
 <% if @book.image.url != nil %>
   <%= image_tag @book.image.url %>
 <%else%>
@@ -26,11 +28,25 @@
 <%end%>
 </p>
 
+      </div>
+      <!-- /.col-lg-8 -->
+      <div class="col-lg-5">
+        <h1 class="font-weight-light">
+  <strong>Title:</strong><%= @book.title %></h1>
+  <h1 class="font-weight-light">
+  <strong>Title:</strong>  <%= @book.author %></h1>
+        <p>T<%= @book.description %></p>
+        <a class="btn btn-primary" href="#">Call to Action!</a>
 <p>
   <strong>Category:</strong>
   <%= @book.category %>
 </p>
 
+<h2>Comments</h2>
+<%= render @book.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
 
 <%= link_to 'Back', books_path %>
 
@@ -39,3 +55,11 @@
 <%= link_to 'Edit', edit_book_path(@book) %>
 
 <% end %> 
+
+      </div>
+      <!-- /.col-md-4 -->
+    </div>
+    <!-- /.row -->
+
+</body>
+</html>

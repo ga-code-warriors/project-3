@@ -36,7 +36,7 @@ class BooksController < ApplicationController
   def create
     # @book = Book.new(book_params)
 
-    puts "\n\n\n\n\n\n ****** ", book_params[:image]
+    # puts "\n\n\n\n\n\n ****** ", book_params[:image]
     @book = current_user.books.build(book_params)
     respond_to do |format|
       if @book.save

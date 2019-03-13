@@ -1,24 +1,32 @@
-
-<h1>Books</h1>
-
-<%= link_to 'New Book', new_book_path %>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-    </tr>
-  </thead>
-
-<tbody>
-    <% @books.each do |book| %>
-      <tr>
-        <td><%= link_to book.title, book %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 <% if @has_books %>
 <%= link_to 'My books', books_path %>
 <%end%>
 <br>
+
+<div class="container-fluid">
+<div class="row pr-5 pl-5 mr-2 ml-2">
+
+<% @books.each do |book| %>
+<div class="col">
+
+<div class="card mt-5" style="width: 14.1rem;  height: 400px;">
+<% if book.image.url != nil %>
+
+  <%= image_tag book.image.url , class: "card-img-top", style: "width: 14rem;  height: 200px;" %>
+  <%else%>
+    <%= image_tag 'http://insignia.sd23.bc.ca/Library/images/cover/book.png' , class: "card-img-top", style: "width: 14rem;  height: 200px;"%>
+  <%end%>
+
+  <div class="card-body">
+    <h5 class="card-title"> Book title: <%= link_to book.title, book %></h5>
+    
+    <p class="card-text">Author:<%= book.author %></p>
+        <p class="card-text">Category: <%= book.category %></p>
+
+   
+  </div>
+
+ </div>
+ </div>
+<% end %>
+</div>
