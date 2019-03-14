@@ -1,9 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!,except: [:index, :show]
-  
-
-
   # GET /books
   # GET /books.json
   def index
@@ -26,16 +23,15 @@ class BooksController < ApplicationController
   end
 
   # GET /books/1/edit
+  # call function user_edit 
   def edit
     user_edit
   end
 
   # POST /books
   # POST /books.json
-
   def create
     # @book = Book.new(book_params)
-
     # puts "\n\n\n\n\n\n ****** ", book_params[:image]
     @book = current_user.books.build(book_params)
     respond_to do |format|
@@ -84,12 +80,23 @@ class BooksController < ApplicationController
     def book_params
       params.require(:book).permit(:title, :author, :description, :image, :category)
     end
+# user_edit method to check if user added this book or not 
+# allow user to edit book if headde
     def user_edit
       if (user_signed_in? && (current_user.id == @book.user_id))
-   @can_edit = true
+         @can_edit = true
       else 
-  @can_edit = false
-    
+         @can_edit = false
+      end 
+    end
+
+# search
+    def search
+      if params[:search].blank?  
+        redirect_to(root_path, alert: "Empty field!") and return  
+      else  
+        @parameter = params[:search].downcase  
+        @results = Store.all.where("lower(name) LIKE :search", search: @parameter)  
       end 
     end
 end

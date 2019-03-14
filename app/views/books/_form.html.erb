@@ -3,20 +3,20 @@
 
 <div style="border-left:25px black solid; box-shadow: 0 4px 3px 0 rgba(0, 0, 0, 0.1), 0 3px 10px 0 rgba(0, 0, 0, 0.19); padding:30px; width:100%; border-top-right-radius: 25px; border-bottom-right-radius: 25px; position: relative; background:#c0e2f5;">
 
-<div style="
-position: absolute;
-left: 10px;
-top: 0px; 
-height: 70px; 
-width: 50px; 
-padding: 0px; 
--webkit-transform: rotate(0deg) skew(0deg); 
-transform: rotate(0deg) skew(0deg); 
-border-left: 25px solid darkred; 
-border-right: 25px solid darkred; 
-border-bottom: 25px solid transparent;"></div> 
-<h1>New Book</h1>
-</br>
+            <div style="
+            position: absolute;
+            left: 10px;
+            top: 0px; 
+            height: 70px; 
+            width: 50px; 
+            padding: 0px; 
+            -webkit-transform: rotate(0deg) skew(0deg); 
+            transform: rotate(0deg) skew(0deg); 
+            border-left: 25px solid darkred; 
+            border-right: 25px solid darkred; 
+            border-bottom: 25px solid transparent;"></div> 
+            <h1>New Book</h1>
+            </br>
 
               <%= form_with(model: book, local: true) do |form| %>
                 <% if book.errors.any? %>
@@ -58,12 +58,14 @@ border-bottom: 25px solid transparent;"></div>
                 </div>
 
                 <div class="field">
-                  <%= form.file_field :image, :class => 'btn btn-primary col-md-12' , style:'background:white; color:black; border-color:#a3a1a1;'  %> 
+                  <%= form.file_field :image, :class => 'btn btn-light col-md-12' , style:'background:#c0e2f5; color:black; border:1px solid #c0e2f5;'  %> 
                 </div>
+                
                 </br>
-                <div >
-                  <%= form.label :category    %>
+                <div class='category mr-5 pr-5'>
+                  
                   <%= form.select :category, ['Arts & Music', 'Business', 'Kids' , 'Computers & Tech' , 'Cooking' , 'Medical' , 'Religion' , 'Sports' , 'Travel' , 'Entertainment' , 'History' , 'Edictation']%>
+                  <%= form.label :category %>
                 </div>
                   </br> 
                 <div class="actions">

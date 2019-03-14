@@ -32,18 +32,19 @@
      <form class="form-inline mr-1 my-2 my-lg-0">
         <div class="login mr-3 pl-3 mt-4">
       <% if user_signed_in? %>
-        <%= link_to 'logout', destroy_user_session_path, method: :delete ,style:'font-size:14px; color:black; text-decoration: underline;'%>
+        <%= link_to 'Log out', destroy_user_session_path, method: :delete ,style:'font-size:14px; color:black; text-decoration: underline;'%>
         <%= link_to ' . ' , style:'font-size:14px; color:black; text-decoration: underline;' %>
-        <%= link_to "Change password", edit_user_registration_path , style:'font-size:14px; color:black; text-decoration: underline;'%>
+        <%= link_to "Setting", edit_user_registration_path , style:'font-size:14px; color:black; text-decoration: underline;'%>
      <% else %>
-      <%= link_to "login", new_user_session_path ,style:'font-size:14px; color:black; text-decoration: underline;'%>
+      <%= link_to "Log in", new_user_session_path ,style:'font-size:14px; color:black; text-decoration: underline;'%>
     <% end %>
     </div>
     <div class="textField mt-3">
-       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-       <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">🔍</button>
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">🔍</button>
     </div>
      </form>
+
    </div>
    </nav>
    <%= yield %>
